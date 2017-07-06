@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>vue 绑定事件失效</title>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+</head>
+<body>
+  <div id="app">
+    <button type="button" name="button">点我</button>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+      },
+      methods: {
+
+      },
+      mounted: function () {
+        $('[type="button"]').on('click', function() {
+          alert('触发点击');
+        });
+      }
+    })
+  </script>
+</body>
+</html>
