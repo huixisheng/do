@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jquery 的on() 方法绑定了子元素事件，却无法触发。</title>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+  .task-item{ border:  1px solid #eee; }
+</style>
+<div class="task-list" id="task-list">
+  <div class="task-item">
+    <span>icon</span>
+    <span class="task-content">睡觉</span>
+    <span class="task-detail">内容detail</span>
+    <div class="detail">
+      <input type="text" value="一点钟睡觉" class="content">
+      <textarea class="desc"></textarea>
+      <span>提醒时间</span>
+      <input type="date" class="time">
+      <button class="btn3">更新</button>
+    </div>
+  </div>
+
+  <div class="task-item">
+    <span>icon</span>
+    <span class="task-content">睡觉</span>
+    <span class="task-detail">内容detail</span>
+    <div class="detail">
+      <input type="text" value="一点钟睡觉" class="content">
+      <textarea class="desc"></textarea>
+      <span>提醒时间</span>
+      <input type="date" class="time">
+      <button class="btn3">更新</button>
+    </div>
+  </div>
+
+  <div class="task-item">
+    <span>icon</span>
+    <span class="task-content">睡觉</span>
+    <span class="task-detail">内容detail</span>
+    <div class="detail">
+      <input type="text" value="一点钟睡觉" class="content">
+      <textarea class="desc"></textarea>
+      <span>提醒时间</span>
+      <input type="date" class="time">
+      <button class="btn3">更新</button>
+    </div>
+  </div>
+
+  <div class="task-item">
+    <span>icon</span>
+    <span class="task-content">睡觉</span>
+    <span class="task-detail">内容detail</span>
+    <div class="detail">
+      <input type="text" value="一点钟睡觉" class="content">
+      <textarea class="desc"></textarea>
+      <span>提醒时间</span>
+      <input type="date" class="time">
+      <button class="btn3">更新</button>
+    </div>
+  </div>
+
+  <div class="task-item">
+    <span>icon</span>
+    <span class="task-content">睡觉</span>
+    <span class="task-detail">内容detail</span>
+    <div class="detail">
+      <input type="text" value="一点钟睡觉" class="content">
+      <textarea class="desc"></textarea>
+      <span>提醒时间</span>
+      <input type="date" class="time">
+      <button class="btn3">更新</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  $(document).ready(function() {
+    // $('div.task-list').on('click','.detail > *:lt(2)',function(e){
+    //     e.target.style.backgroundColor = "#ffff00";
+    // });
+    // $('div.task-list').on('click','.detail:lt(99) > *:lt(2)',function(e){
+    //     e.target.style.backgroundColor = '#ffff00';
+    // });
+    $('div.task-list').on('click','.task-item:lt(99) > .detail:lt(99) > *:lt(2)',function(e){
+          e.target.style.backgroundColor = '#ffff00';
+      });
+  });
+</script>
+
+</body>
+</html>
