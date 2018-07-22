@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <template id="test">
+    <div>
+       aaaa<slot name="age"></slot>
+    </div>
+  </template>
+
+  <div id="app">
+    <show>
+       <span slot="age">{{age}}</span>
+    </show>
+    <show-test>
+      <span slot="age">showTest</span>
+    </show-test>
+  </div>
+  <script>
+  Vue.component('show', {
+    template: document.getElementById('test').innerHTML,
+  });
+  const showTest = Vue.extend({
+    name: 'showTest',
+    template: document.getElementById('test').innerHTML,
+  });
+  // var user ={
+  //     template: document.getElementById('test').innerHTML,
+  // }
+  new Vue({
+    el:"#app",
+    data:{
+       age:22
+    },
+    components:{
+      showTest: showTest,
+      // "show": test,
+    },
+  })
+  </script>
+</body>
+</html>
